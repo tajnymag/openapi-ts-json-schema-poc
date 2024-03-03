@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   reproduce-bearer-type-error:
-    runs-on: [ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Node.js
@@ -14,7 +14,7 @@ jobs:
       - name: Run generator
         run: node generate-bearer-type-error.cjs
   reproduce-component-separator-error:
-    runs-on: [ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Node.js
@@ -26,7 +26,7 @@ jobs:
       - name: Run generator
         run: node generate-component-separator-error.cjs
   reproduce-root-path-error:
-    runs-on: [ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Node.js
