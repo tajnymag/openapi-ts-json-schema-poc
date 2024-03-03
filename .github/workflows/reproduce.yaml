@@ -12,7 +12,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run generator
-        run: node generate-bearer-type-error.cjs
+        run: node test-bearer-type-error.cjs
   reproduce-component-separator-error:
     runs-on: ubuntu-latest
     steps:
@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run generator
-        run: node generate-component-separator-error.cjs
+        run: node test-component-separator-error.cjs
   reproduce-root-path-error:
     runs-on: ubuntu-latest
     steps:
@@ -36,4 +36,4 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run generator
-        run: node generate-root-path-error.cjs
+        run: node test-root-path-error.cjs

@@ -1,12 +1,16 @@
 const path = require('path');
+const assert = require('assert');
 const { openapiToTsJsonSchema, fastifyIntegrationPlugin } = require('openapi-ts-json-schema');
+
+const FILENAME = 'root-path-error.yaml';
+const OUTPUT_PATH = path.resolve(__dirname, `generated-${path.basename(FILENAME, path.extname(FILENAME))}`);
 
 async function processSpec(filename) {
 	return openapiToTsJsonSchema({
-		openApiSchema: path.resolve(__dirname, filename),
+		openApiSchema: path.resolve(__dirname, FILENAME),
 		definitionPathsToGenerateFrom: ['paths', 'components.schemas'],
 		refHandling: 'keep',
-		outputPath: path.resolve(__dirname, `generated-${path.basename(filename, path.extname(filename))}`),
+		outputPath: OUTPUT_PATH,
 		plugins: [
 			fastifyIntegrationPlugin({
 				sharedSchemasFilter: ({ schemaId }) => schemaId.startsWith('/components/schemas'),
@@ -16,7 +20,8 @@ async function processSpec(filename) {
 }
 
 async function generate() {
-	await processSpec('bearer-type-error.yaml');
+	// does not throw
+	await assert.doesNotReject(processSpec(FILENAME));
 }
 
 generate();
