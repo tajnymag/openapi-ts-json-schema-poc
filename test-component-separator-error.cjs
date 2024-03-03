@@ -8,7 +8,7 @@ const OUTPUT_PATH = path.resolve(__dirname, `generated-${path.basename(FILENAME,
 
 async function processSpec(filename) {
 	return openapiToTsJsonSchema({
-		openApiSchema: path.resolve(__dirname, FILENAME),
+		openApiSchema: path.resolve(__dirname, filename),
 		definitionPathsToGenerateFrom: ['paths', 'components.schemas'],
 		refHandling: 'keep',
 		outputPath: OUTPUT_PATH,
