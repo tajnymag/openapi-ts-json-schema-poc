@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: Minimal OpenAPI specification to reproduce an issue
+  version: 1.0.0
+components:
+  schemas:
+    HelloWorld:
+      type: object
+      properties:
+        message:
+          type: string
+      required:
+        - message
+paths:
+  "/":
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HelloWorld'

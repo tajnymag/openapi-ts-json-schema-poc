@@ -1,0 +1,39 @@
+on: [push]
+
+jobs:
+  reproduce-bearer-type-error:
+    runs-on: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run generator
+        run: node generate-bearer-type-error.cjs
+  reproduce-component-separator-error:
+    runs-on: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run generator
+        run: node generate-component-separator-error.cjs
+  reproduce-root-path-error:
+    runs-on: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run generator
+        run: node generate-root-path-error.cjs
