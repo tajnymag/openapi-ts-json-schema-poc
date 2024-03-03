@@ -4,11 +4,11 @@ jobs:
   reproduce-bearer-type-error:
     runs-on: [ubuntu-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.11.x'
       - name: Install dependencies
         run: npm install
       - name: Run generator
@@ -16,11 +16,11 @@ jobs:
   reproduce-component-separator-error:
     runs-on: [ubuntu-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.11.x'
       - name: Install dependencies
         run: npm install
       - name: Run generator
@@ -28,11 +28,11 @@ jobs:
   reproduce-root-path-error:
     runs-on: [ubuntu-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.11.x'
       - name: Install dependencies
         run: npm install
       - name: Run generator
